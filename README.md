@@ -165,17 +165,6 @@ This repo includes QC examples to replicate real-world needs:
 * Integrate revenue modeling for CLTV (cohort-level LTV calculation).
 * Add LookML / dbt models for better modularity if using dbt or Looker.
 
----
-
-## Commit & presentation tips
-
-* Use incremental commits with descriptive messages:
-
-  * `feat: add funnel counts SQL`
-  * `feat: add cohort retention SQL`
-  * `docs: add README and screenshots`
-* In README TL;DR include 1–2 screenshots or a GIF to grab attention.
-* Add repository topics: `analytics`, `bigquery`, `ga4`, `gtm`, `funnel-analysis`, `python`.
 
 ---
 
@@ -193,10 +182,4 @@ GitHub: [https://github.com/](https://github.com/)KennyTheAnalyst
 
 ---
 
-**Notes**
-
-* This repo is intended as a demonstration of analytics workflows commonly used in GA4 / GTM environments. Replace placeholder project/dataset names with your own BigQuery identifiers before running SQL.
-* If you publish screenshots or a dashboard, ensure any sample data is anonymized.
-
-```
 
