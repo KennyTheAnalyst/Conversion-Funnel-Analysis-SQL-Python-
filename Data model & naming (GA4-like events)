@@ -1,0 +1,7 @@
+event_time (TIMESTAMP)
+user_id (STRING)
+session_id (STRING)
+event_name (STRING)   -- e.g., 'session_start', 'product_view', 'add_to_cart', 'begin_checkout', 'purchase'
+product_id (STRING)
+revenue (FLOAT)
+utm_source, utm_medium, utm_campaign (optional)
