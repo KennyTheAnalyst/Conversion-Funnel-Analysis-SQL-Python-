@@ -1,0 +1,8 @@
+def event_sequence_issues(df):
+    # df: session-level events
+    issues = []
+    # Find sessions with purchase but no product_view
+    sessions_purchase = set(df[df.event_name=='purchase'].session_id.unique())
+    sessions_product = set(df[df.event_name=='product_view'].session_id.unique())
+    anomaly_sessions = sessions_purchase - sessions_product
+    return list(anomaly_sessions)
