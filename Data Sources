@@ -1,0 +1,32 @@
+# scripts/generate_sample_data.py
+import pandas as pd
+import numpy as np
+import uuid
+from datetime import datetime, timedelta
+
+n_users = 2000
+start = datetime(2024,1,1)
+rows = []
+for i in range(n_users):
+    user_id = f"user_{i}"
+    sessions = np.random.poisson(2)
+    for s in range(max(1, sessions)):
+        session_id = str(uuid.uuid4())
+        session_start = start + timedelta(days=np.random.randint(0,90), hours=np.random.randint(0,24))
+        # events in session
+        events = ["session_start"]
+        if np.random.rand() < 0.7: events.append("product_view")
+        if "product_view" in events and np.random.rand() < 0.35: events.append("add_to_cart")
+        if "add_to_cart" in events and np.random.rand() < 0.4: events.append("begin_checkout")
+        if "begin_checkout" in events and np.random.rand() < 0.5: events.append("purchase")
+        for e_idx, evt in enumerate(events):
+            rows.append({
+                "event_time": (session_start + timedelta(minutes=e_idx*2)).isoformat(),
+                "user_id": user_id,
+                "session_id": session_id,
+                "event_name": evt,
+                "product_id": f"product_{np.random.randint(1,50)}",
+                "revenue": np.random.choice([0, 29.99, 49.99, 0, 0, 99.99])
+            })
+df = pd.DataFrame(rows)
+df.to_csv("data/sample_events.csv", index=False)
