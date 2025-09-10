@@ -1,0 +1,17 @@
+conversion-funnel-analysis/
+├── README.md
+├── requirements.txt
+├── data/
+│   └── sample_events.csv        # optional sample dataset (if not using BigQuery)
+├── sql/
+│   ├── 01_raw_events.sql        # sample ingestion / staging SQL (BigQuery)
+│   ├── 02_funnel_counts.sql     # funnel counts & conversion SQL
+│   ├── 03_cohort_retention.sql  # cohort retention SQL
+│   └── 04_attribution.sql       # simple attribution SQL
+├── notebooks/
+│   └── funnel_analysis.ipynb    # Jupyter Notebook for Python analysis + charts
+├── src/
+│   ├── utils.py                 # helper functions (db connectors, QC checks)
+│   └── run_queries.py           # optional script to run SQL and fetch results
+└── docs/
+    └── dashboard_screenshots.png
