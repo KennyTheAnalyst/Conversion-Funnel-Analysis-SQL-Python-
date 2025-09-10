@@ -1,0 +1,7 @@
+pandas
+matplotlib
+seaborn        # optional, but for visuals; if you prefer pure matplotlib, drop seaborn
+numpy
+google-cloud-bigquery
+scipy
+jupyter
